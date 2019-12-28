@@ -13,7 +13,7 @@ const Sighting = props => (
       image={
         props.result.data.photo
           ? props.result.data.photo.url
-          : 'https://stupid-simple-blog.com/blog_02.jpg'
+          : 'https://stupid-simple-blog.com/blog_01.jpg'
       }
       url={props.result.id}
     />
@@ -24,12 +24,7 @@ const Sighting = props => (
           <img src={props.result.data.photo.url} alt='Popes' />
         ) : (
           <div className='center-inner'>
-            <img alt='Popes' src='/blog_02.jpg' />
-            <p className='courtesty'>
-              <a href='https://www.reddit.com/r/alisonbecker/'>
-                Courtesy of Alison Becker
-              </a>
-            </p>
+            <img alt='Popes' src='/blog_01.jpg' />
           </div>
         )}
         <h1>{props.result.name}</h1>
@@ -147,7 +142,7 @@ Sighting.getInitialProps = async ({ query }) => {
     submission_id: query.id
   })
   const subs = await client.listFormSubmissions({
-    form_id: '5e02ab73b0c19a0007bd0957'
+    form_id: 'enter_netlify_form_id_here'
   })
 
   // console.log(subs)

@@ -24,14 +24,14 @@ module.exports = {
       },
       '/add-blog-post': {
         page: '/add-blog-post',
-        publishedSitemap: '2011-03-04T03:36:27.377Z',
-        publishedRSS: 'Fri, 03 Mar 2006 03:36:28 GMT',
+        publishedSitemap: '2019-12-27T03:36:27.377Z',
+        publishedRSS: 'Fri, 27 Dec 2019 03:36:28 GMT',
         title: 'Add a blog post',
         description: 'Stupid Simple Blog | Add a blog post'
       }
     }
     const result = await client.listFormSubmissions({
-      form_id: '5e02ab73b0c19a0007bd0957'
+      form_id: 'enter_netlify_form_id_here'
     })
     const fetchData = () => {
       result.map(car => {
