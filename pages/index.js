@@ -31,7 +31,7 @@ export default function Index() {
                 color='primary'
                 startIcon={<CloudUploadIcon height='24' width='24' />}
               >
-                Add a Pope's Story
+                Add a blog post
               </Button>
             </Link>
           </p>

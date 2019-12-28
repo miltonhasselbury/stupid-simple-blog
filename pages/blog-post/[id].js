@@ -13,7 +13,7 @@ const Sighting = props => (
       image={
         props.result.data.photo
           ? props.result.data.photo.url
-          : 'https://stupid-simple-blog.com/popes_nude_bar_02.jpg'
+          : 'https://stupid-simple-blog.com/blog_02.jpg'
       }
       url={props.result.id}
     />
@@ -24,7 +24,7 @@ const Sighting = props => (
           <img src={props.result.data.photo.url} alt='Popes' />
         ) : (
           <div className='center-inner'>
-            <img alt='Popes' src='/popes_nude_bar_02.jpg' />
+            <img alt='Popes' src='/blog_02.jpg' />
             <p className='courtesty'>
               <a href='https://www.reddit.com/r/alisonbecker/'>
                 Courtesy of Alison Becker
@@ -45,8 +45,8 @@ const Sighting = props => (
             href='https://twitter.com/share?ref_src=twsrc%5Etfw'
             class='twitter-share-button'
             data-url={`https://stupid-simple-blog.com/story/${props.result.id}`}
-            data-via='popesnudebar'
-            data-hashtags='stripper'
+            data-via='craigtockman'
+            data-hashtags='nextjs, netlify'
             data-show-count='false'
           >
             Tweet

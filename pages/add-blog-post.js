@@ -15,19 +15,18 @@ export default function Form() {
   return (
     <>
       <MetaTags
-        title='Stupid Simple Blog | Add Stupid Simple Blog spotting'
-        desc='Add a story of a night spent at Popes here. Fill out this form and upload a photo if you got one.'
+        title='Stupid Simple Blog | Add a blog post'
+        desc='Ok. Calm down. Add a blog post and upload a photo if you got one.'
         image='https://stupid-simple-blog.com/blog_01.jpg'
-        url='add-story'
+        url='add-blog-post'
       />
       <Layout>
-        <h1>I went to Stupid Simple Blog!!!</h1>
+        <h1>Add a blog post to this stupid blog!!!</h1>
         <h2>
-          Ok. Calm down. Tell us your Pope's story and upload a photo if you got
-          one.
+          Ok. Calm down. Add a blog post and upload a photo if you got one.
         </h2>
         <form
-          name='story'
+          name='blog'
           method='post'
           data-netlify='true'
           data-netlify-honeypot='bot-field'
@@ -35,13 +34,13 @@ export default function Form() {
           encType='multipart/form-data'
           autoComplete='off'
         >
-          <input type='hidden' name='form-name' value='story' />
+          <input type='hidden' name='form-name' value='blog' />
           <div>
             <FormControl>
               <TextField
                 id='form-name'
                 name='name'
-                label='Story title'
+                label='Blog title'
                 required
                 variant='outlined'
               />
@@ -51,7 +50,7 @@ export default function Form() {
             <TextField
               name='location'
               id='outlined-multiline-static'
-              label='Add your Popes story here'
+              label='Say somthing here'
               multiline
               rows='4'
               defaultValue=''
@@ -63,7 +62,7 @@ export default function Form() {
           </div>
           <div>
             <label className='fileLabel' htmlFor='photo'>
-              Upload a Popes photo
+              Upload an image here
             </label>
             <input
               className='fileBtn'
@@ -81,7 +80,7 @@ export default function Form() {
               size='large'
               color='primary'
             >
-              Submit story
+              Submit
             </Button>
           </div>
         </form>

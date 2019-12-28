@@ -6,10 +6,7 @@ function MetaTags(props) {
     <Head>
       <title>{title}</title>
       <meta charSet='UTF-8' />
-      <meta
-        name='google-site-verification'
-        content='d9RvTV-PY242x_wT-iNkCY0gxxtwgpuYWDvLV_2uUHg'
-      />
+      <meta name='google-site-verification' content='' />
       <meta
         name='viewport'
         content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
@@ -30,8 +27,8 @@ function MetaTags(props) {
       <meta name='twitter:card' content='summary' />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={desc} />
-      <meta name='twitter:site' content='@popesnudebar' />
-      <meta name='twitter:creator' content='@popesnudebar' />
+      <meta name='twitter:site' content='@craigtockman' />
+      <meta name='twitter:creator' content='@craigtockman' />
       <link rel='icon' href='/favicon-32.png' sizes='32x32' />
       <link rel='icon' href='/favicon-57.png' sizes='57x57' />
       <link rel='icon' href='/favicon-76.png' sizes='76x76' />

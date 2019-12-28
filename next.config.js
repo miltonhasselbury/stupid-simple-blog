@@ -5,7 +5,6 @@ const client = new NetlifyAPI(process.env.NETLIFY_TOKEN)
 
 module.exports = {
   env: {
-    // Reference a variable that was defined in the .env file and make it available at Build Time
     NETLIFY_TOKEN: process.env.NETLIFY_TOKEN
   },
   exportPathMap: async function() {
@@ -19,16 +18,16 @@ module.exports = {
         page: '/',
         publishedSitemap: homeTime,
         publishedRSS: 'Fri, 03 Mar 2006 03:36:28 GMT',
-        title: 'Stupid Simple Blog Homepage',
-        description: 'A site dedicated to the history of Popes nude bar.'
+        title: 'Stupid Simple Blog | Homepage',
+        description:
+          'A stupid simple free Next.js photo blog with a Netlify form database, infinite scroll, metatags and more.'
       },
       '/add-blog-post': {
         page: '/add-blog-post',
         publishedSitemap: '2011-03-04T03:36:27.377Z',
         publishedRSS: 'Fri, 03 Mar 2006 03:36:28 GMT',
-        title: 'Stupid Simple Blog | Add a story',
-        description:
-          'Add a story about a night at Popes here. Fill out this form and upload a photo'
+        title: 'Add a blog post',
+        description: 'Stupid Simple Blog | Add a blog post'
       }
     }
     const result = await client.listFormSubmissions({
@@ -46,7 +45,7 @@ module.exports = {
           page: `/story/${id}`,
           publishedSitemap: timeSitemap,
           publishedRSS: timeRSS,
-          title: `${name} just posted a story about Popes.`,
+          title: `${name} just made a test post at the super simple blog.`,
           description: `${data.location}`
         }
 

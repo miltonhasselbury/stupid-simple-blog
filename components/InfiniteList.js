@@ -12,18 +12,6 @@ export default function Index() {
       const result = await client.listFormSubmissions({
         form_id: '5e02ab73b0c19a0007bd0957'
       })
-
-      const date = [
-        'March 24, 2012',
-        'May 29, 2008',
-        'November 8, 2015',
-        'May 2, 2009',
-        'August 22, 2011',
-        'August 8, 2010',
-        'April 20, 2010',
-        'December 21, 2009'
-      ]
-
       const options = {
         year: 'numeric',
         month: 'long',
@@ -39,12 +27,10 @@ export default function Index() {
           ),
           location: story.data.location,
           ...(story.data.photo ? { photo: story.data.photo.url } : {}),
-          id: story.id,
-          date: date[index]
+          id: story.id
         }))
         .reverse()
       setData(newStories)
-      console.log(newStories)
     }
     fetchData()
     return () => (isSubscribed = false)
@@ -102,9 +88,7 @@ export default function Index() {
                     {story.name}
                   </a>
                   <br />
-                  <span>
-                    Posted on {story.date ? story.date : story.timestamp}
-                  </span>
+                  <span>Posted on {story.timestamp}</span>
                 </div>
               </span>
               <p
