@@ -35,48 +35,37 @@ const Sighting = props => (
             __html: props.result.data.location.replace(/\n/g, '<br />')
           }}
         />
-        <p>
-          <a
-            href='https://twitter.com/share?ref_src=twsrc%5Etfw'
-            class='twitter-share-button'
-            data-url={`https://stupid-simple-blog.com/story/${props.result.id}`}
-            data-via='craigtockman'
-            data-hashtags='nextjs, netlify'
-            data-show-count='false'
-          >
-            Tweet
-          </a>
-          <script
-            async
-            src='https://platform.twitter.com/widgets.js'
-            charset='utf-8'
-          ></script>
-        </p>
         <p className='btn'>
           <span className='arrowBtns'>
             {props.result.prevPage && (
-              <Link href='/story/[id]' as={`/story/${props.result.prevPage}`}>
+              <Link
+                href='/blog-post/[id]'
+                as={`/blog-post/${props.result.prevPage}`}
+              >
                 <a className='arrowBtn'>
                   <ArrowBackIcon
                     fontSize='small'
                     height='16px'
                     width='16px'
-                    titleAccess='Previous page'
+                    titleAccess='Previous post'
                   />
                 </a>
               </Link>
             )}
             <Link href='/' as='/'>
-              <a className='arrowBtn arrowHome'>All stories</a>
+              <a className='arrowBtn arrowHome'>All Blogs</a>
             </Link>
             {props.result.nextPage && (
-              <Link href='/story/[id]' as={`/story/${props.result.nextPage}`}>
+              <Link
+                href='/blog-post/[id]'
+                as={`/blog-post/${props.result.nextPage}`}
+              >
                 <a className='arrowBtn'>
                   <ArrowForwardIcon
                     fontSize='small'
                     height='16px'
                     width='16px'
-                    titleAccess='Next page'
+                    titleAccess='Next post'
                   />
                 </a>
               </Link>

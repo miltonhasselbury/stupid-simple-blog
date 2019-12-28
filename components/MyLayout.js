@@ -17,6 +17,7 @@ export default function Layout(props) {
       <div style={layoutStyle}>
         {props.children}
         <style jsx global>{`
+          // Oh you don't like my global style? Fine change it here.
           @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
           a,
           abbr,

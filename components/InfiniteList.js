@@ -46,7 +46,7 @@ export default function Index() {
   const [start, setStart] = useState(startTotalBlogs)
   const sliceOfBlogs = allBlogs.slice(start, totalBlogs)
 
-  // infinite scroll
+  // react infinite scroll stuff with hooks
   const [isFetching, setIsFetching] = useState(false)
 
   useEffect(() => {
@@ -93,14 +93,22 @@ export default function Index() {
                   <span>Posted on {story.timestamp}</span>
                 </div>
               </span>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: story.location.replace(/\n/g, '<br />')
-                }}
-              />
+              <p>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: story.location
+                      .substring(0, 500)
+                      .replace(/\n/g, '<br />')
+                  }}
+                />
+                <span>
+                  ... <a href={`blog-post/${story.id}`}>Read more</a>
+                </span>
+              </p>
               {story.photo && <img src={story.photo} />}
             </li>
           ))
+          // Show newest posts first
           .reverse()}
       </ul>
       <style jsx>
