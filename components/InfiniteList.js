@@ -12,7 +12,7 @@ export default function Index() {
     const fetchData = async () => {
       const result = await client.listFormSubmissions({
         // Enter YOUR netlify form id here. This one is mine.
-        form_id: '5e06ad5c43277b00085c6a8a'
+        form_id: '5e06f33ec7aac100099c313a'
       })
       // Make the netlify timestamp pretty and readable.
       const options = {
