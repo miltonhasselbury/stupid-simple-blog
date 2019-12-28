@@ -9,7 +9,7 @@ const Sighting = props => (
   <>
     <MetaTags
       title={`${props.result.name}`}
-      desc="A new story about Pope's nude bar"
+      desc='Stupid Simple Blog | A blog post'
       image={
         props.result.data.photo
           ? props.result.data.photo.url

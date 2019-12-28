@@ -73,7 +73,7 @@ export default function Index() {
   return (
     <>
       <h4 className='center'>
-        Check out these {totalStories} stories posted about Pope's.
+        Check out these {totalStories} blog posts below.
       </h4>
       <ul id='list'>
         {sliceOfStories
