@@ -41,16 +41,16 @@ module.exports = {
         const timeSitemap = new Date(time).toISOString()
         const timeRSS = new Date(time).toUTCString()
 
-        xml[`/story/${id}`] = {
-          page: `/story/${id}`,
+        xml[`/blog-post/${id}`] = {
+          page: `/blog-post/${id}`,
           publishedSitemap: timeSitemap,
           publishedRSS: timeRSS,
           title: `${name} just made a test post at the super simple blog.`,
           description: `${data.location}`
         }
 
-        paths[`/story/${id}`] = {
-          page: '/story/[id]',
+        paths[`/blog-post/${id}`] = {
+          page: '/blog-post/[id]',
           query: { id: `${id}` }
         }
 
