@@ -34,38 +34,38 @@ module.exports = {
     // Create paths based on the form submission/s id
     // Example https://example.com/blog-post/5e06b1cd5972af9de018008d
 
-    // const result = await client.listFormSubmissions({
-    //   // Enter YOUR netlify form id here. This one is mine.
-    //   form_id: '5e06ad5c43277b00085c6a8a'
-    // })
-    // const fetchData = () => {
-    //   result.map(car => {
-    //     const { id, created_at, name, data } = car
+    const result = await client.listFormSubmissions({
+      // Enter YOUR netlify form id here. This one is mine.
+      form_id: '5e06f33ec7aac100099c313a'
+    })
+    const fetchData = () => {
+      result.map(car => {
+        const { id, created_at, name, data } = car
 
-    //     const time = created_at.toString()
-    //     const timeSitemap = new Date(time).toISOString()
-    //     const timeRSS = new Date(time).toUTCString()
+        const time = created_at.toString()
+        const timeSitemap = new Date(time).toISOString()
+        const timeRSS = new Date(time).toUTCString()
 
-    //     xml[`/blog-post/${id}`] = {
-    //       page: `/blog-post/${id}`,
-    //       publishedSitemap: timeSitemap,
-    //       publishedRSS: timeRSS,
-    //       title: `${name} just made a test post at the super simple blog.`,
-    //       description: `${data.location}`
-    //     }
+        xml[`/blog-post/${id}`] = {
+          page: `/blog-post/${id}`,
+          publishedSitemap: timeSitemap,
+          publishedRSS: timeRSS,
+          title: `${name} just made a test post at the super simple blog.`,
+          description: `${data.location}`
+        }
 
-    //     paths[`/blog-post/${id}`] = {
-    //       page: '/blog-post/[id]',
-    //       query: { id: `${id}` }
-    //     }
+        paths[`/blog-post/${id}`] = {
+          page: '/blog-post/[id]',
+          query: { id: `${id}` }
+        }
 
-    //     // create sitemap
-    //     let siteData = JSON.stringify(xml)
-    //     fs.writeFileSync(`db/sitemap.json`, siteData)
-    //   })
-    // }
+        // create sitemap
+        let siteData = JSON.stringify(xml)
+        fs.writeFileSync(`db/sitemap.json`, siteData)
+      })
+    }
 
-    // fetchData()
+    fetchData()
     return paths
   }
 }
