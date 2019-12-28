@@ -30,8 +30,13 @@ module.exports = {
         description: 'Stupid Simple Blog | Add a blog post'
       }
     }
+
+    // Create paths based on the form submission/s id
+    // Example https://craigtockman/blog-post/5e06b1cd5972af9de018008d
+
     const result = await client.listFormSubmissions({
-      form_id: 'enter_netlify_form_id_here'
+      // Enter YOUR netlify form id here. This one is mine.
+      form_id: '5e06ad5c43277b00085c6a8a'
     })
     const fetchData = () => {
       result.map(car => {
@@ -54,6 +59,7 @@ module.exports = {
           query: { id: `${id}` }
         }
 
+        // create sitemap
         let siteData = JSON.stringify(xml)
         fs.writeFileSync(`db/sitemap.json`, siteData)
       })

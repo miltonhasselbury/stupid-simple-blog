@@ -17,7 +17,7 @@ export default function Form() {
       <MetaTags
         title='Stupid Simple Blog | Add a blog post'
         desc='Ok. Calm down. Add a blog post and upload a photo if you got one.'
-        image='https://stupid-simple-blog.com/blog_01.jpg'
+        image='https://stupid-simple-blog.com/blog_01.jpeg'
         url='add-blog-post'
       />
       <Layout>

@@ -48,7 +48,7 @@ function MetaTags(props) {
       ) : (
         <meta
           property='og:image'
-          content='https://stupid-simple-blog.com/blog_01.jpg'
+          content='https://stupid-simple-blog.com/blog_01.jpeg'
         />
       )}
       {image && <meta name='twitter:image' content={`${image}`} />}

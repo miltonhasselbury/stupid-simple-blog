@@ -13,12 +13,12 @@ export default function Index() {
       <MetaTags
         title='Stupid Simple Blog'
         desc='A simple next.js, netlify form database blog with material ui, metatags, infinite scroll and more.'
-        image='https://stupid-simple-blog.com/blog_01.jpg'
+        image='https://stupid-simple-blog.com/blog_01.jpeg'
       />
       <Layout>
         <Title />
         <div className='center'>
-          <img src='/blog_01.jpg' alt='Stupid Simple Blog' />
+          <img src='/blog_01.jpeg' alt='Stupid Simple Blog' />
           <p className='courtesty'>
             <a href='https://www.flickr.com/photos/rheinitz/'>
               Courtesy of Craig Tockman

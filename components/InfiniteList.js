@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import FaceIcon from '@material-ui/icons/Face'
 
 export default function Index() {
+  // Connect to Netlify API
   const NetlifyAPI = require('netlify')
   const client = new NetlifyAPI(process.env.NETLIFY_TOKEN)
   const [data, setData] = useState([])
@@ -10,15 +11,17 @@ export default function Index() {
     let isSubscribed = true
     const fetchData = async () => {
       const result = await client.listFormSubmissions({
-        form_id: '5e02ab73b0c19a0007bd0957'
+        // Enter YOUR netlify form id here. This one is mine.
+        form_id: '5e06ad5c43277b00085c6a8a'
       })
+      // Make the netlify timestamp pretty and readable.
       const options = {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
       }
 
-      const newStories = result
+      const newBlogs = result
         .map((story, index) => ({
           name: story.data.name,
           timestamp: new Date(story.created_at).toLocaleDateString(
@@ -30,17 +33,18 @@ export default function Index() {
           id: story.id
         }))
         .reverse()
-      setData(newStories)
+      setData(newBlogs)
     }
     fetchData()
     return () => (isSubscribed = false)
   }, [])
 
-  const allStories = data
-  const totalStories = allStories.length
-  const startTotalStories = totalStories - 5
-  const [start, setStart] = useState(startTotalStories)
-  const sliceOfStories = allStories.slice(start, totalStories)
+  const allBlogs = data
+  const totalBlogs = allBlogs.length
+  //The number of blogs to load on page load. 5
+  const startTotalBlogs = totalBlogs - 5
+  const [start, setStart] = useState(startTotalBlogs)
+  const sliceOfBlogs = allBlogs.slice(start, totalBlogs)
 
   // infinite scroll
   const [isFetching, setIsFetching] = useState(false)
@@ -72,11 +76,9 @@ export default function Index() {
 
   return (
     <>
-      <h4 className='center'>
-        Check out these {totalStories} blog posts below.
-      </h4>
-      <ul id='list'>
-        {sliceOfStories
+      <h4 className='center'>Check out these {totalBlogs} blog posts below.</h4>
+      <ul>
+        {sliceOfBlogs
           .map(story => (
             <li key={story.id}>
               <span className='storyTop'>
@@ -84,7 +86,7 @@ export default function Index() {
                   <FaceIcon style={{ fontSize: 50, marginLeft: '-4px' }} />
                 </span>
                 <div>
-                  <a href={`story/${story.id}`} className='name'>
+                  <a href={`blog-post/${story.id}`} className='name'>
                     {story.name}
                   </a>
                   <br />
@@ -107,10 +109,6 @@ export default function Index() {
             color: #000;
             display: flex;
             margin-bottom: 10px;
-          }
-          .name{
-            font-weight: bold;
-            font-size: 1.2em;
           }
           h4 {
             margin: 20px 0 0;
@@ -135,6 +133,10 @@ export default function Index() {
           }
           .center {
             text-align: center;
+          }
+          .name {
+            font-weight: bold;
+            font-size: 1.2em;
           }
         `}
       </style>

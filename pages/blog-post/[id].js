@@ -13,7 +13,7 @@ const Sighting = props => (
       image={
         props.result.data.photo
           ? props.result.data.photo.url
-          : 'https://stupid-simple-blog.com/blog_01.jpg'
+          : 'https://stupid-simple-blog.com/blog_01.jpeg'
       }
       url={props.result.id}
     />
@@ -24,7 +24,7 @@ const Sighting = props => (
           <img src={props.result.data.photo.url} alt='Popes' />
         ) : (
           <div className='center-inner'>
-            <img alt='Popes' src='/blog_01.jpg' />
+            <img alt='Popes' src='/blog_01.jpeg' />
           </div>
         )}
         <h1>{props.result.name}</h1>
@@ -138,14 +138,16 @@ const Sighting = props => (
 Sighting.getInitialProps = async ({ query }) => {
   const NetlifyAPI = require('netlify')
   const client = new NetlifyAPI(process.env.NETLIFY_TOKEN)
+
+  // Get each form submissions id
   const result = await client.listFormSubmission({
     submission_id: query.id
   })
   const subs = await client.listFormSubmissions({
-    form_id: 'enter_netlify_form_id_here'
+    // Enter YOUR netlify form id here. This one is mine.
+    form_id: '5e06ad5c43277b00085c6a8a'
   })
 
-  // console.log(subs)
   const getAllKeyID = subs.map((entry, index) => {
     const ids = ([index] = entry.id)
     return ids
